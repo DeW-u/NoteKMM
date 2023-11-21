@@ -13,7 +13,7 @@ getNoteById:
 SELECT * FROM noteEntity WHERE id = :id;
 
 insertNote:
-INSERT OR REPLACE INTO noteEntity VALUES ?;
+INSERT OR REPLACE INTO noteEntity VALUES (?, ?, ?, ?, ?);
 
 deleteNote:
 DELETE FROM noteEntity WHERE id = :id;

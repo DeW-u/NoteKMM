@@ -1,25 +1,26 @@
 import SwiftUI
 import shared
 
-class SampleObservableObject: ObservableObject {
-    var viewModel: SampleViewModel
+class NotesListObservableObject: ObservableObject {
+    var viewModel: NotesListViewModel
     
-    init(viewModel: SampleViewModel) {
+    init(viewModel: NotesListViewModel) {
         self.viewModel = viewModel
     }
 }
 
-extension SampleViewModel {
-    func asObservableObject() -> SampleObservableObject {
-        return SampleObservableObject(viewModel: self)
+extension NotesListViewModel {
+    func asObservableObject() -> NotesListObservableObject {
+        return NotesListObservableObject(viewModel: self)
     }
 }
 
 struct ContentView: View {
-    @ObservedObject var viewModel = ViewModels().getSampleViewModel().asObservableObject()
+    @ObservedObject var viewModelComponent = ViewModelComponent().getNotesListViewModel().asObservableObject()
     
 	var body: some View {
-        Text(viewModel.viewModel.getString())
+//        Text(viewModelComponent.viewModel.getString())
+        Text(" XD ")
 	}
 }
 
